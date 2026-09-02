@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   const contactLinks = [
-        {
+       /*  {
             name: 'SNAPCHAT 👻',
             url: 'https://www.snapchat.com/@mon-ami72?invite_id=ezkWG9xH&locale=fr_FR&share_id=Exaa1e0gQUyiK_o87tGaXQ&sid=4c702909b4974ff7bc0ec2c313dee875',
             id: 'snapchat',
             className: 'snapchat', 
             text: "SNAPCHAT 👻"
-        },
+        }, */
         {
             name: 'TELEGRAM 🌐',
             url: 'https://t.me/monamicoco',
@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
             className: 'telegram',
             text: "TELEGRAM 🌐"
         },
-        {
+       /*  {
             name: 'INSTAGRAM 📸',
             url: 'https://www.instagram.com/monami72off?igsh=MTd3N3ZsZmNpYzR4OA%3D%3D&utm_source=qr',
             id: 'instagram',
             className: 'instagram',
             text: "INSTAGRAM 📸"
-        },
+        }, */
         /* {
             name: 'WHATSAPP 💬',
             url: '',
@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             video:'VideoC.mov',
                             description: '(Base pure — Certifiée sur labo)\n • Origine : guyanaise •\n  Sélection : Premier choix, non coupée, zéro résidu.\n ne la cherche pas, elle se trouve chez\n MON AMI. ',
                             tarifs: [
-                                { weight: '0.5Og', price: 40.00 },               
-                                { weight: '1g', price: 60.00 },               
-                                { weight: '5g', price: 270.00 },               
-                                { weight: '10g', price: 460.00 },               
+                                { weight: '0.5Og', price: 30.00 },               
+                                { weight: '1g', price: 50.00 },               
+                                { weight: '5g', price: 230.00 },               
+                                { weight: '10g', price: 420.00 },               
                             ]
                     },
             ] // Les produits s'insèrent directement ici
