@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
 
 
+    
+
 
   const contactLinks = [
        /*  {
@@ -65,6 +67,24 @@ document.addEventListener('DOMContentLoaded', function () {
             quality: '🤍 Spécial',
             image: 'CategBlanche.png',
             products: [
+                   {
+                            id: 'COCO ÉCAILLE',
+                            flag: '🇸🇷',
+                            name: 'COCO ÉCAILLE ⛄' ,
+                            farm: 'Ami\'Selection 🤗',
+                            promoEligible: true,
+                            featured: true,
+                            type: 'Hash',
+                            image:'ProductCE.jpg',
+                            video:'VideoCE.mov',
+                            description: 'Pureté : 0,9 ',
+                            tarifs: [
+                                { weight: '0.5Og', price: 40.00 },               
+                                { weight: '1g', price: 60.00 },               
+                                { weight: '5g', price: 250.00 },               
+                                { weight: '10g', price: 450.00 },               
+                            ]
+                    },
                    {
                             id: '⛰︎🫒 OLIVETTE 0.9',
                             flag: '🇸🇷',
@@ -385,9 +405,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentView = 'categories'; // 'categories', 'farms', ou 'products'
     let currentCategoryId = null; // Garde en mémoire la catégorie sélectionnée
     let currentFarmId = null; // Garde en mémoire la farm sélectionnée
-    let appliedPromo = null; // Pour suivre le code promo
-    let paymentMethod = 'Espèce'; // Méthode de paiement par défaut
-    let notificationTimeout = null; // Timer pour la notification panier
+    let appliedPromo = null;
+let paymentMethod = 'Espèce';
+let orderMethod = null;
+let notificationTimeout = null;
 
     // --- DÉFINIS TES CODES PROMO ICI ---
     const validPromoCodes = {
@@ -1375,12 +1396,19 @@ function showStartPromoPopup() {
         message += `*💰 TOTAL: ${totalPrice.toFixed(2)}€*\n`;
     }
 
-  // Pied de page
-   // Pied de page
-   const addressInput = document.getElementById('customer-address');
+ const addressInput = document.getElementById('customer-address');
 const customerAddress = addressInput ? addressInput.value.trim() : "";
 
-message += `\n📍 Adresse : ${customerAddress}\n`;
+message += `\n🚚 Mode : ${orderMethod}\n`;
+
+if (orderMethod === 'Livraison') {
+    message += `📍 Adresse : ${customerAddress || 'À préciser'}\n`;
+}
+
+if (orderMethod === 'Meet-up') {
+    message += `🤝 Meet-up : lieu à définir ensemble\n`;
+}
+
 message += `💳 Paiement : ${paymentMethod}`;
 
     return message;
@@ -1500,10 +1528,6 @@ function openTelegramContact() {
     // Clics sur le reste de la page
     document.body.addEventListener('click', async function (e) {
                 const target = e.target;
-
-
-
-
         // Gère l'accordéon sur la page contact
         const accordionHeader = target.closest('.accordion-header');
         if (accordionHeader) {
@@ -1679,10 +1703,32 @@ function openTelegramContact() {
             showPage('page-cart');
         }
 
-        // Clic sur "Commander"
-        if (target.closest('#checkout-button')) {
-            renderConfirmation();
+        // Choix Livraison / Meet-up
+const orderModeInput = target.closest('input[name="order-mode"]');
+
+if (orderModeInput) {
+    orderMethod = orderModeInput.value;
+
+    if (window.Telegram?.WebApp?.HapticFeedback) {
+        tg.HapticFeedback.selectionChanged();
+    }
+}
+
+       // Clic sur "Commander"
+if (target.closest('#checkout-button')) {
+
+    if (!orderMethod) {
+        showNotification('⚠️ Choisis Livraison ou Meet-up.');
+
+        if (window.Telegram?.WebApp?.HapticFeedback) {
+            tg.HapticFeedback.notificationOccurred('error');
         }
+
+        return;
+    }
+
+    renderConfirmation();
+}
 
         // Clic sur "Modifier"
         if (target.closest('#confirmation-modify-order')) {

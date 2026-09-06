@@ -675,6 +675,48 @@
             font-family: "Georgia", serif;
         }
 
+
+.order-mode-box {
+    background: rgba(44, 44, 46, 0.9);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 10px 2px #1191ff;
+}
+
+.order-mode-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+    font-family: Optima, sans-serif;
+}
+
+.order-mode-options {
+    display: flex;
+    gap: 10px;
+}
+
+.order-mode-option {
+    flex: 1;
+    background: #1c1c1d;
+    border: 1px solid #1191ff;
+    border-radius: 12px;
+    padding: 14px 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+}
+
+.order-mode-option input {
+    accent-color: #1191ff;
+    transform: scale(1.2);
+}
+
         /* Page Panier & Confirmation */
         .cart-item {
             display: flex;
@@ -1504,6 +1546,23 @@
             </div>
         </div>
         <div class="cart-actions">
+            <div class="order-mode-box">
+    <div class="order-mode-title">🚚 Comment veux-tu récupérer ta commande ?</div>
+
+    <div class="order-mode-options">
+
+        <label class="order-mode-option">
+            <input type="radio" name="order-mode" value="Livraison">
+            <span>🚗 Livraison</span>
+        </label>
+
+        <label class="order-mode-option">
+            <input type="radio" name="order-mode" value="Meet-up">
+            <span>🤝 Meet-up</span>
+        </label>
+
+    </div>
+</div>
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cart-total-price">0.00€</span>
