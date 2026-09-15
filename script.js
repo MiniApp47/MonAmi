@@ -30,10 +30,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }, */
         {
             name: 'TELEGRAM 🌐',
-            url: 'https://t.me/monamicoco',
+            url: 'https://t.me/monamiami72',
             id: 'telegram',
             className: 'telegram',
             text: "TELEGRAM 🌐"
+        },
+        {
+            name: 'WHATSAPP 💬',
+            url: 'https://wa.me/33745621068',
+            id: 'whatsapp',
+            className: 'whatsapp',
+            text: "WHATSAPP 💬"
         },
        /*  {
             name: 'INSTAGRAM 📸',
@@ -44,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, */
         /* {
             name: 'WHATSAPP 💬',
-            url: '',
+            url: 'https://wa.me/33745621068',
             id: 'whatsapp',
             className: 'whatsapp',
             text: "WHATSAPP 💬"
@@ -1440,17 +1447,29 @@ message += `💳 Paiement : ${paymentMethod}`;
         }
     }
 
-// --- TELEGRAM CONTACT SAFE ---
-const TELEGRAM_USERNAME = "monamicoco"; // Identifiant Telegram sans le '@'
+// --- TELEGRAM + WHATSAPP CONTACT SAFE ---
+const TELEGRAM_USERNAME = "monamiami72"; // Identifiant Telegram sans le '@'
+const WHATSAPP_NUMBER = "33745621068";   // Numéro WhatsApp au format international, sans +
 
 function openTelegramContact() {
     const message = formatOrderMessage();
     const telegramUrl = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
 
     if (window.Telegram && window.Telegram.WebApp) {
-        tg.openTelegramLink(telegramUrl); // Optimisation : appel natif Telegram WebApp
+        tg.openTelegramLink(telegramUrl);
     } else {
         window.open(telegramUrl, "_blank");
+    }
+}
+
+function openWhatsAppContact() {
+    const message = formatOrderMessage();
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    if (window.Telegram && window.Telegram.WebApp) {
+        tg.openLink(whatsappUrl);
+    } else {
+        window.open(whatsappUrl, "_blank");
     }
 }
     // --- GESTION PAGE AVIS ---
@@ -1737,6 +1756,12 @@ if (target.closest('#checkout-button')) {
 // Clic sur Telegram
 if (target.closest('#confirm-telegram')) {
     openTelegramContact();
+    return;
+}
+
+// Clic sur WhatsApp
+if (target.closest('#confirm-whatsapp')) {
+    openWhatsAppContact();
     return;
 }
 
