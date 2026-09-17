@@ -28,16 +28,16 @@ document.addEventListener('DOMContentLoaded', function () {
             className: 'snapchat', 
             text: "SNAPCHAT 👻"
         }, */
-        {
+       /*  {
             name: 'TELEGRAM 🌐',
             url: 'https://t.me/monamiami72',
             id: 'telegram',
             className: 'telegram',
             text: "TELEGRAM 🌐"
-        },
+        }, */
         {
             name: 'WHATSAPP 💬',
-            url: 'https://wa.me/33745621068',
+            url: 'https://wa.me/33775019851',
             id: 'whatsapp',
             className: 'whatsapp',
             text: "WHATSAPP 💬"
@@ -1449,9 +1449,9 @@ message += `💳 Paiement : ${paymentMethod}`;
 
 // --- TELEGRAM + WHATSAPP CONTACT SAFE ---
 const TELEGRAM_USERNAME = "monamiami72"; // Identifiant Telegram sans le '@'
-const WHATSAPP_NUMBER = "33745621068";   // Numéro WhatsApp au format international, sans +
+const WHATSAPP_NUMBER = "33775019851";   // Numéro WhatsApp au format international, sans +
 
-function openTelegramContact() {
+/* function openTelegramContact() {
     const message = formatOrderMessage();
     const telegramUrl = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
 
@@ -1461,7 +1461,7 @@ function openTelegramContact() {
         window.open(telegramUrl, "_blank");
     }
 }
-
+ */
 function openWhatsAppContact() {
     const message = formatOrderMessage();
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
