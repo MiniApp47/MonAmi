@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'WHATSAPP 💬',
-            url: 'https://wa.me/33745611068',
+            url: 'https://wa.me/33745621068',
             id: 'whatsapp',
             className: 'whatsapp',
             text: "WHATSAPP 💬"
@@ -1449,7 +1449,7 @@ message += `💳 Paiement : ${paymentMethod}`;
 
 // --- TELEGRAM + WHATSAPP CONTACT SAFE ---
 const TELEGRAM_USERNAME = "monamiami72"; // Identifiant Telegram sans le '@'
-const WHATSAPP_NUMBER = "33745611068";   // Numéro WhatsApp au format international, sans +
+const WHATSAPP_NUMBER = "33745621068";   // Numéro WhatsApp au format international, sans +
 
 function openTelegramContact() {
     const message = formatOrderMessage();
