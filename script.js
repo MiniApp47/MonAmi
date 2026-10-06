@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, */
         {
             name: 'TELEGRAM 🌐',
-            url: 'https://t.me/monamiami72',
+            url: 'https://t.me/monami720',
             id: 'telegram',
             className: 'telegram',
             text: "TELEGRAM 🌐"
@@ -1448,7 +1448,7 @@ message += `💳 Paiement : ${paymentMethod}`;
     }
 
 // --- TELEGRAM + WHATSAPP CONTACT SAFE ---
-const TELEGRAM_USERNAME = "monamiami72"; // Identifiant Telegram sans le '@'
+const TELEGRAM_USERNAME = "monami720"; // Identifiant Telegram sans le '@'
 const WHATSAPP_NUMBER = "33745621068";   // Numéro WhatsApp au format international, sans +
 
 function openTelegramContact() {
