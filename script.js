@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             promoEligible: true,
                             featured: true,
                             type: 'Hash',
-                            image:'ProductCE.jpg',
-                            video:'VideoCE.mov',
+                            image:'ProductCE.png',
+                            video:'VideoCE.mp4',
                             description: 'Pureté : 0,9 ',
                             tarifs: [
                                 { weight: '0.5Og', price: 40.00 },               
