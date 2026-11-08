@@ -111,6 +111,33 @@ document.addEventListener('DOMContentLoaded', function () {
                             ]
                     },
             ] // Les produits s'insèrent directement ici
+        },
+          {
+            id: 'Keta',
+            name: '⚛️ KETA 💥',
+            type: 'KETA',
+            quality: '🤍 KETA',
+            image: 'Categ.png',
+            products: [
+                   {
+                            id: 'Keta 📀',
+                            flag: '🧨',
+                            name: 'KETA 📀' ,
+                            farm: 'Ami\'Selection 🤗',
+                            promoEligible: true,
+                            featured: true,
+                            type: 'Hash',
+                            image:'ProductKE.jpg',
+                            video:'VideoKE.mp4',
+                            description: '',
+                            tarifs: [
+                                { weight: '1g', price: 30.00 },               
+                                { weight: '2g', price: 50.00 },               
+                                { weight: '5g', price: 110.00 },               
+                                { weight: '10g', price: 180.00 },               
+                            ]
+                    },
+            ] // Les produits s'insèrent directement ici
         }
      
          // ============================================================
